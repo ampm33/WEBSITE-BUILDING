@@ -1,85 +1,118 @@
-/* =========================================
-   Sprint 3 baseline additions (safe to add)
-   Keeps your font + ALL CAPS
-   ========================================= */
+/* PRANAPHOTOS — Sprint 3 (Labs 3.1–3.3) */
+:root{
+  --sidebar-w:260px;
+  --bg:#fff; --text:#111; --muted:#555; --hairline:rgba(17,17,17,.12);
 
-/* 5) Lists + spacing polish (Lab 3.1) */
-ul, ol {
-  margin: 0 0 1.25rem 1.25rem;
-  padding: 0;
-  color: var(--muted);
+  /* Lab 3.2: Type scale + spacing system */
+  --text-sm:12px; --text-md:14px; --text-lg:18px; --text-xl:28px;
+  --space-1:1rem; --space-2:2rem; --space-4:4rem;
+  --lh:1.7;
 }
 
-li { margin: 0.35rem 0; }
+*{box-sizing:border-box}
+html,body{height:100%}
 
-/* 6) Images (Lab 3.1) */
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 6px;
-  border: 1px solid var(--hairline);
+body{
+  margin:0; background:var(--bg); color:var(--text);
+  font-family:"Times New Roman",Times,Georgia,serif;
+  text-transform:uppercase; letter-spacing:.08em;
+  font-size:var(--text-md); line-height:var(--lh);
 }
 
-/* 7) Headings spacing (slightly cleaner rhythm) */
-h1 { font-size: 28px; margin-top: 0.25rem; }
-h2 { font-size: 18px; margin-top: 2rem; }
-h3 { font-size: 14px; margin-top: 1.25rem; }
+h1,h2,h3{font-weight:normal; letter-spacing:.12em; line-height:1.2; margin:0 0 var(--space-1)}
+h1{font-size:var(--text-xl); margin-top:var(--space-1)}
+h2{font-size:var(--text-lg); margin-top:var(--space-2)}
+h3{font-size:var(--text-md); margin-top:var(--space-1)}
 
-/* 8) Link clarity (still minimal, but “looks like a link”) */
-a {
-  text-decoration: none;
-  border-bottom: 1px solid var(--hairline);
-  padding-bottom: 2px;
+p{margin:0 0 var(--space-1); color:var(--muted); max-width:70ch}
+section{margin-bottom:var(--space-2)}
+
+ul,ol{margin:0 0 var(--space-1) 1.25rem; padding:0; color:var(--muted)}
+li{margin:.35rem 0}
+
+a{color:var(--text); text-decoration:none; border-bottom:1px solid var(--hairline); padding-bottom:2px}
+a:hover{opacity:.65; border-bottom-color:var(--text)}
+
+img,video{max-width:100%; height:auto; display:block; margin:var(--space-1) 0; border-radius:6px; border:1px solid var(--hairline)}
+
+/* Sidebar nav layout */
+.sidebar{
+  position:fixed; inset:0 auto 0 0; width:var(--sidebar-w);
+  padding:32px 24px; background:var(--bg);
+  border-right:1px solid var(--hairline);
+  display:flex; flex-direction:column; gap:22px; z-index:20;
 }
 
-a:hover {
-  opacity: 0.65;
-  border-bottom-color: var(--text);
+.brand__link{color:var(--text); font-size:16px; letter-spacing:.18em; border-bottom:none; padding:0}
+.brand__sub{margin-top:8px; font-size:var(--text-sm); color:var(--muted); letter-spacing:.08em}
+
+.nav{display:grid; gap:var(--space-1); margin-top:var(--space-1)}
+.nav__link{
+  font-size:var(--text-sm); letter-spacing:.14em;
+  padding:6px 0; width:fit-content;
+  border-bottom:1px solid transparent;
+}
+.nav__link:hover{border-bottom-color:var(--text); opacity:1}
+.nav__link.is-active{border-bottom-color:var(--text); opacity:.9}
+
+.sidebar__footer{
+  margin-top:auto; padding-top:18px;
+  border-top:1px solid var(--hairline);
+  color:var(--muted); font-size:11px; letter-spacing:.15em;
 }
 
-/* 9) Make the content container work even if a page forgets .content */
-main,
-.container {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 48px 36px;
+/* Content container */
+.content{
+  margin-left:var(--sidebar-w);
+  max-width:900px;
+  padding:48px 36px;
 }
 
-/* If you’re using sidebar layout, this doesn’t interfere.
-   If you’re NOT, this gives you the centered container requirement. */
-
-/* 10) Fallback styling for a plain <nav><ul><li><a>...</a> structure
-      (in case some pages don’t use .sidebar/.nav classes yet) */
-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+/* Video embed helper (Vimeo/YouTube) */
+.video{margin-top:var(--space-2)}
+.video iframe{
+  width:100%;
+  aspect-ratio:16/9;
+  border:1px solid var(--hairline);
+  border-radius:6px;
 }
 
-nav li { margin: 0; }
+/* Mobile: top bar + slide-out sidebar */
+.topbar{display:none}
+.backdrop{position:fixed; inset:0; background:rgba(0,0,0,.35); z-index:15; display:none}
 
-nav a {
-  border-bottom: 1px solid transparent; /* keeps your underline style consistent */
-}
+@media (max-width:900px){
+  .content{margin-left:0; padding:28px 18px 60px}
 
-nav a:hover {
-  border-bottom-color: var(--text);
-}
+  .topbar{
+    position:sticky; top:0;
+    display:flex; align-items:center; gap:12px;
+    padding:14px 16px; background:var(--bg);
+    border-bottom:1px solid var(--hairline);
+    z-index:30;
+  }
+  .topbar__brand{color:var(--text); font-size:var(--text-sm); letter-spacing:.18em; border-bottom:none; padding:0}
 
-/* 11) Small improvement: avoid hidden sidebar on mobile without backdrop rule */
-@media (max-width: 900px) {
-  .backdrop { display: none; }
-  body.menu-open .backdrop { display: block; }
-}
-/* Videography embeds */
-.video {
-  margin-top: 2rem;
-}
+  .menuBtn{
+    width:44px; height:44px;
+    border:1px solid var(--hairline);
+    background:var(--bg); border-radius:999px;
+    cursor:pointer; display:grid; place-items:center;
+  }
+  .menuBtn__lines{width:18px; height:12px; position:relative; display:block}
+  .menuBtn__lines::before,.menuBtn__lines::after{
+    content:""; position:absolute; left:0; right:0; height:1px; background:var(--text)
+  }
+  .menuBtn__lines::before{top:2px}
+  .menuBtn__lines::after{bottom:2px}
 
-.video iframe {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  border: 1px solid var(--hairline);
-  border-radius: 6px;
+  .sidebar{
+    transform:translateX(-102%);
+    transition:transform .25s ease;
+    border-right:none;
+    box-shadow:0 10px 30px rgba(0,0,0,.12);
+  }
+
+  body.menu-open .sidebar{transform:translateX(0)}
+  body.menu-open .backdrop{display:block}
 }
