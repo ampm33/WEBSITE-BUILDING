@@ -1,72 +1,85 @@
-/* Global font for the whole website */
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
-/* =========================
-   Global Typography Styles
-   ========================= */
+/* =========================================
+   Sprint 3 baseline additions (safe to add)
+   Keeps your font + ALL CAPS
+   ========================================= */
 
-body {
-  font-family: "Times New Roman", Times, Georgia, serif;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-size: 14px;
-  line-height: 1.6;
-  color: #111;
+/* 5) Lists + spacing polish (Lab 3.1) */
+ul, ol {
+  margin: 0 0 1.25rem 1.25rem;
+  padding: 0;
+  color: var(--muted);
+}
+
+li { margin: 0.35rem 0; }
+
+/* 6) Images (Lab 3.1) */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 6px;
+  border: 1px solid var(--hairline);
+}
+
+/* 7) Headings spacing (slightly cleaner rhythm) */
+h1 { font-size: 28px; margin-top: 0.25rem; }
+h2 { font-size: 18px; margin-top: 2rem; }
+h3 { font-size: 14px; margin-top: 1.25rem; }
+
+/* 8) Link clarity (still minimal, but “looks like a link”) */
+a {
+  text-decoration: none;
+  border-bottom: 1px solid var(--hairline);
+  padding-bottom: 2px;
+}
+
+a:hover {
+  opacity: 0.65;
+  border-bottom-color: var(--text);
+}
+
+/* 9) Make the content container work even if a page forgets .content */
+main,
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 48px 36px;
+}
+
+/* If you’re using sidebar layout, this doesn’t interfere.
+   If you’re NOT, this gives you the centered container requirement. */
+
+/* 10) Fallback styling for a plain <nav><ul><li><a>...</a> structure
+      (in case some pages don’t use .sidebar/.nav classes yet) */
+nav ul {
+  list-style: none;
   margin: 0;
   padding: 0;
 }
 
-/* Headings */
-h1, h2, h3 {
-  font-weight: normal;
-  letter-spacing: 0.12em;
-  margin-bottom: 0.75em;
-}
-
-/* Navigation */
-nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 2rem 0;
-  display: flex;
-  gap: 2rem;
-}
+nav li { margin: 0; }
 
 nav a {
-  text-decoration: none;
-  color: #111;
+  border-bottom: 1px solid transparent; /* keeps your underline style consistent */
 }
 
 nav a:hover {
-  opacity: 0.6;
+  border-bottom-color: var(--text);
 }
 
-/* Main content spacing */
-main {
-  padding: 3rem;
+/* 11) Small improvement: avoid hidden sidebar on mobile without backdrop rule */
+@media (max-width: 900px) {
+  .backdrop { display: none; }
+  body.menu-open .backdrop { display: block; }
+}
+/* Videography embeds */
+.video {
+  margin-top: 2rem;
 }
 
-/* Paragraphs */
-p {
-  max-width: 600px;
-  margin-bottom: 1.5rem;
-}
-
-/* Lists */
-ul, ol {
-  max-width: 600px;
-  margin-bottom: 2rem;
-}
-
-/* Footer */
-footer {
-  padding: 2rem;
-  font-size: 11px;
-  letter-spacing: 0.15em;
-}
-body {
-  font-family: Helvetica, Arial, sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+.video iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 1px solid var(--hairline);
+  border-radius: 6px;
 }
