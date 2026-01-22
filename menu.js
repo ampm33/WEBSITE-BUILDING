@@ -45,7 +45,7 @@ document.addEventListener("keydown", (e) => {
 <body>
   <aside class="sidebar">
     <a class="brand__link" href="index.html">PRANAPHOTOS</a>
-    <div class="brand__sub">PHOTO / VIDEO</div>
+  
 
     <nav class="nav">
       <a class="nav__link" href="index.html">HOME</a>
@@ -59,6 +59,5 @@ document.addEventListener("keydown", (e) => {
   </aside>
 
   <main class="content">
-    <!-- your page content here -->
   </main>
 </body>
