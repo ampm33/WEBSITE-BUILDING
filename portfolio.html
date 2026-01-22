@@ -3,95 +3,96 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Portfolio | PranaPhotos</title>
+    <title>PORTFOLIO | PRANAPHOTOS</title>
     <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
-    <header>
-      <h1>Portfolio</h1>
+    <div class="layout">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="title">PRANAPHOTOS</div>
+          <div class="subtitle">PHOTO / VIDEO</div>
+        </div>
 
-      <nav aria-label="Primary navigation">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About Adri</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
-          <li><a href="videography.html">Videography</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
+        <nav class="nav" aria-label="Primary navigation">
+          <a href="index.html">HOME</a>
+          <a href="about.html">ABOUT</a>
+          <a href="portfolio.html" aria-current="page">PORTFOLIO</a>
+          <a href="videography.html">VIDEOGRAPHY</a>
+          <a href="contact.html">CONTACT</a>
+        </nav>
 
-    <main>
-      <section>
-        <h2>Photography Work</h2>
-        <p>
-          This portfolio is organized by category so visitors can quickly understand the
-          type of work I make. Each section is structured to be expanded later into full
-          galleries.
-        </p>
-        <p>
-          Right now, the descriptions are intentionally short and readable. The goal is
-          clarity and organization, not heavy styling.
-        </p>
-        <p>
-          As I update the site, I’ll replace placeholders with project details, dates,
-          collaborators, and links to complete collections.
-        </p>
-      </section>
+        <div class="sidebar-footer">© 2026 PRANAPHOTOS</div>
+      </aside>
 
-      <section>
-        <h2>Categories</h2>
+      <main class="content" id="main">
+        <div class="content-inner">
+          <!-- TITLE / INTRO (matches videography page pattern) -->
+          <section class="section">
+            <h1>PORTFOLIO</h1>
+            <p>
+              THIS PORTFOLIO IS ORGANIZED BY CATEGORY SO VISITORS CAN QUICKLY UNDERSTAND
+              THE TYPE OF WORK I MAKE. EACH SECTION CAN BE EXPANDED LATER INTO FULL
+              GALLERIES OR PROJECT PAGES.
+            </p>
+          </section>
 
-        <article>
-          <h3>Portraits</h3>
-          <p>
-            Portrait work centered on presence and personality, with an emphasis on
-            natural expression and clean composition.
-          </p>
-        </article>
+          <!-- CATEGORY 1 -->
+          <section class="section" aria-labelledby="featured">
+            <h2 id="featured">FEATURED</h2>
 
-        <article>
-          <h3>Editorial / Fashion</h3>
-          <p>
-            Concept-driven images that support a mood, story, or brand identity, often
-            created through collaboration and creative direction.
-          </p>
-        </article>
+            <div class="grid">
+              <div class="placeholder">
+                <div class="ph-box"><span>IMAGE PLACEHOLDER 01</span></div>
+                <div class="ph-caption">CAPTION / SERIES NAME</div>
+              </div>
 
-        <article>
-          <h3>Lifestyle / Documentary</h3>
-          <p>
-            Storytelling that captures real moments, environments, and movement—built for
-            campaigns, events, and long-form narratives.
-          </p>
-        </article>
-      </section>
-    </main>
+              <div class="placeholder">
+                <div class="ph-box"><span>IMAGE PLACEHOLDER 02</span></div>
+                <div class="ph-caption">CAPTION / SERIES NAME</div>
+              </div>
 
-    <footer>
-      <p>&copy; 2026 PranaPhotos</p>
-    </footer>
+              <div class="placeholder">
+                <div class="ph-box"><span>IMAGE PLACEHOLDER 03</span></div>
+                <div class="ph-caption">CAPTION / SERIES NAME</div>
+              </div>
+
+              <div class="placeholder">
+                <div class="ph-box"><span>IMAGE PLACEHOLDER 04</span></div>
+                <div class="ph-caption">CAPTION / SERIES NAME</div>
+              </div>
+            </div>
+          </section>
+
+          <!-- CATEGORY 2 (optional, mirrors videography having multiple sections) -->
+          <section class="section" aria-labelledby="selects">
+            <h2 id="selects">SELECTS</h2>
+
+            <div class="grid">
+              <div class="placeholder">
+                <div class="ph-box"><span>IMAGE PLACEHOLDER 05</span></div>
+                <div class="ph-caption">CAPTION / SERIES NAME</div>
+              </div>
+
+              <div class="placeholder">
+                <div class="ph-box"><span>IMAGE PLACEHOLDER 06</span></div>
+                <div class="ph-caption">CAPTION / SERIES NAME</div>
+              </div>
+
+              <div class="placeholder">
+                <div class="ph-box"><span>IMAGE PLACEHOLDER 07</span></div>
+                <div class="ph-caption">CAPTION / SERIES NAME</div>
+              </div>
+
+              <div class="placeholder">
+                <div class="ph-box"><span>IMAGE PLACEHOLDER 08</span></div>
+                <div class="ph-caption">CAPTION / SERIES NAME</div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
   </body>
 </html>
-<button class="menuBtn" id="menuBtn" aria-label="Open menu">
-<body>
-  <aside class="sidebar">
-    <a class="brand__link" href="index.html">PRANAPHOTOS</a>
-    <div class="brand__sub">PHOTO / VIDEO</div>
-
-    <nav class="nav">
-      <a class="nav__link" href="index.html">HOME</a>
-      <a class="nav__link" href="about.html">ABOUT</a>
-      <a class="nav__link" href="portfolio.html">PORTFOLIO</a>
-      <a class="nav__link" href="videography.html">VIDEOGRAPHY</a>
-      <a class="nav__link" href="contact.html">CONTACT</a>
-    </nav>
-
-    <div class="sidebar__footer">© PRANAPHOTOS</div>
-  </aside>
-
-  <main class="content">
-    <!-- your page content here -->
-  </main>
-</body>
