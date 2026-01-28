@@ -8,8 +8,11 @@
   </head>
 
   <body>
+    <a class="skip-link" href="#main">SKIP TO CONTENT</a>
+
     <div class="layout">
-      <aside class="sidebar">
+      <!-- SIDEBAR -->
+      <aside class="sidebar" aria-label="Site sidebar">
         <div class="brand">
           <div class="title">PRANAPHOTOS</div>
           <div class="subtitle">PHOTO / VIDEO</div>
@@ -26,39 +29,26 @@
         <div class="sidebar-footer">© 2026 PRANAPHOTOS</div>
       </aside>
 
-      <main class="content" id="main">
-        <div class="content-inner">
-          <section class="section" aria-labelledby="welcome">
+      <!-- CONTENT -->
+      <main class="content" id="main" tabindex="-1">
+        <section class="home-hero" aria-labelledby="welcome">
+          <div class="content-inner">
             <h1 id="welcome">WELCOME</h1>
+
             <p>
               PRANAPHOTOS IS A CREATIVE STUDIO LED BY ADRI MEYER, BUILT AROUND CALM,
-              INTENTIONAL VISUAL STORYTELLING. THIS WEBSITE IS A MULTI-PAGE PROJECT FOCUSED
-              ON STRUCTURE, NAVIGATION, AND MEANING-FIRST HTML.
+              INTENTIONAL VISUAL STORYTELLING.
             </p>
             <p>
-              THE GOAL IS TO ORGANIZE CONTENT CLEARLY BEFORE ANY MAJOR DESIGN WORK. BY USING
-              SEMANTIC SECTIONS AND LOGICAL HEADINGS, EACH PAGE STAYS READABLE AND EASY TO
-              EXPAND LATER.
+              THIS WEBSITE IS A MULTI-PAGE PROJECT FOCUSED ON STRUCTURE, NAVIGATION,
+              AND MEANING-FIRST HTML.
             </p>
             <p>
-              AS THE SITE GROWS, THESE PAGES WILL BECOME A HOME FOR PHOTO AND VIDEO WORK,
-              CREATIVE DIRECTION, AND BRAND IDENTITY PROJECTS. FOR NOW, THE FOUNDATION IS
-              DESIGNED TO MEET THE RELEASE 2 REQUIREMENTS CLEANLY.
+              AS THE SITE GROWS, THESE PAGES WILL BECOME A HOME FOR PHOTO AND VIDEO
+              WORK, CREATIVE DIRECTION, AND BRAND IDENTITY PROJECTS.
             </p>
-          </section>
-
-          <section class="section" aria-labelledby="featured">
-            <h2 id="featured">FEATURED IMAGE</h2>
-            <figure>
-              <img
-                src="images/hero.jpg"
-                alt="A featured PranaPhotos image representing Adri Meyer's photography style"
-                width="480"
-              />
-              <figcaption>FEATURED IMAGE WITH ACCESSIBLE ALT TEXT.</figcaption>
-            </figure>
-          </section>
-        </div>
+          </div>
+        </section>
       </main>
     </div>
   </body>
