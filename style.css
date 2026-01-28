@@ -381,3 +381,89 @@ img{ max-width: 100%; height: auto; display: block; }
     padding-top: 0;
   }
 }
+/* =========================
+   VIDEOGRAPHY PORTFOLIO GRID
+   ========================= */
+
+.section-head {
+  margin-bottom: 1rem;
+}
+
+.section-sub {
+  margin: 0.5rem 0 0;
+  max-width: 70ch;
+  opacity: 0.8;
+}
+
+/* Grid */
+.video-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+/* Card */
+.video-card {
+  border-top: 1px solid rgba(0,0,0,0.18);
+  padding-top: 1.25rem;
+}
+
+/* Responsive embed base */
+.video-embed {
+  position: relative;
+  width: 100%;
+  background: #000;
+}
+
+.video-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Aspect ratios */
+.video-16x9 { padding-top: 56.25%; }  /* 16:9 */
+.video-9x16 { padding-top: 177.78%; } /* 9:16 */
+
+/* Meta */
+.video-meta {
+  margin-top: 0.9rem;
+  display: grid;
+  gap: 0.35rem;
+  max-width: 70ch;
+}
+
+.video-meta h3 {
+  margin: 0;
+  letter-spacing: 0.12em;
+}
+
+.video-meta p {
+  margin: 0;
+  opacity: 0.85;
+}
+
+.video-link {
+  display: inline-block;
+  margin-top: 0.35rem;
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(0,0,0,0.5);
+  padding-bottom: 0.15rem;
+  width: fit-content;
+}
+
+.video-link:hover {
+  opacity: 0.85;
+}
+
+/* Desktop layout */
+@media (min-width: 900px) {
+  .video-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  /* keep vertical shorts from becoming insanel*
