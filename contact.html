@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>CONTACT | PRANAPHOTOS</title>
     <link rel="stylesheet" href="style.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
 
   <body>
@@ -29,21 +28,73 @@
 
       <main class="content" id="main">
         <div class="content-inner">
-          <section class="section">
+          <section class="section contact-hero">
             <h1>CONTACT</h1>
-            <p>
-              FOR BOOKINGS OR COLLABORATIONS, REACH OUT USING THE DETAILS BELOW. YOU CAN
-              REPLACE THIS WITH A FORM LATER.
+            <p class="contact-sub">
+              BOOKINGS, BRAND WORK, EDITORIAL, EVENTS — SEND A NOTE AND I’LL GET BACK SOON.
             </p>
           </section>
 
-          <section class="section" aria-labelledby="details">
-            <h2 id="details">DETAILS</h2>
-            <ul>
-              <li>EMAIL: YOURNAME@EXAMPLE.COM</li>
-              <li>INSTAGRAM: @YOURHANDLE</li>
-              <li>LOCATION: DENVER, CO</li>
-            </ul>
+          <section class="section contact-grid" aria-label="Contact">
+            <!-- LEFT: details / image -->
+            <aside class="contact-left">
+              <!-- Optional image: add an image at images/contact.jpg or remove this whole block -->
+              <div class="contact-image">
+                <img src="images/contact.jpg" alt="PranaPhotos contact" />
+              </div>
+
+              <div class="contact-details" aria-label="Contact details">
+                <div class="detail-row">
+                  <span class="detail-label">EMAIL</span>
+                  <a class="detail-value" href="mailto:Pranaleyadri@gmail.com">YOURNAME@EXAMPLE.COM</a>
+                </div>
+
+                <div class="detail-row">
+                  <span class="detail-label">INSTAGRAM</span>
+                  <a class="detail-value" href="https://instagram.com/Pranaphotos_" target="_blank" rel="noopener"
+                    >Pranaphotos_</a
+                  >
+                </div>
+
+                <div class="detail-row">
+                  <span class="detail-label">LOCATION</span>
+                  <span class="detail-value">DENVER, CO</span>
+                </div>
+              </div>
+            </aside>
+
+            <!-- RIGHT: form -->
+            <section class="contact-right" aria-label="Contact form">
+              <!-- IMPORTANT: Replace action URL with your Formspree endpoint -->
+              <form class="contact-form" action="https://formspree.io/f/XXXXYYYY" method="POST">
+                <div class="field">
+                  <label for="name">NAME</label>
+                  <input id="name" name="name" type="text" autocomplete="name" required />
+                </div>
+
+                <div class="field">
+                  <label for="email">EMAIL</label>
+                  <input id="email" name="email" type="email" autocomplete="email" required />
+                </div>
+
+                <div class="field">
+                  <label for="subject">SUBJECT</label>
+                  <input id="subject" name="subject" type="text" required />
+                </div>
+
+                <div class="field">
+                  <label for="message">MESSAGE</label>
+                  <textarea id="message" name="message" rows="6" required></textarea>
+                </div>
+
+                <!-- Optional: email subject + simple spam trap -->
+                <input type="hidden" name="_subject" value="New PranaPhotos Contact Form Submission" />
+                <input type="text" name="_gotcha" class="honeypot" tabindex="-1" autocomplete="off" />
+
+                <button class="btn" type="submit">SEND</button>
+                <p class="form-note">IF THE FORM FAILS, EMAIL ME DIRECTLY.</p>
+              </form>
+            </section>
           </section>
         </div>
       </main>

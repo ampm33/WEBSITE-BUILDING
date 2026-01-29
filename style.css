@@ -467,3 +467,166 @@ img{ max-width: 100%; height: auto; display: block; }
   }
 
   /* keep vertical shorts from becoming insanel*
+/* =========================
+   CONTACT PAGE LAYOUT
+   ========================= */
+
+.page-header {
+  max-width: 680px;
+  padding: 3rem 1.5rem 1rem;
+}
+
+.page-title {
+  margin: 0 0 0.75rem;
+  letter-spacing: 0.14em;
+}
+
+.page-subtitle {
+  margin: 0;
+  max-width: 60ch;
+}
+
+.contact-wrap {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  padding: 1rem 1.5rem 3rem;
+}
+
+@media (min-width: 900px) {
+  .contact-wrap {
+    grid-template-columns: minmax(520px, 680px) 1fr;
+    align-items: start;
+    gap: 3rem;
+  }
+}
+
+.contact-form {
+  max-width: 680px;
+}
+
+.field {
+  margin-bottom: 1.25rem;
+}
+
+label {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.12em;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  border: 1px solid #111;
+  background: transparent;
+  padding: 0.85rem 0.9rem;
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 160px;
+}
+
+.hint {
+  margin: 0.75rem 0 0;
+  font-size: 0.9em;
+  letter-spacing: 0.1em;
+  color: #333;
+}
+
+.btn {
+  display: inline-block;
+  border: 1px solid #111;
+  background: #111;
+  color: #fff;
+  padding: 0.9rem 1.2rem;
+  font: inherit;
+  letter-spacing: 0.12em;
+  text-transform: inherit;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: transparent;
+  color: #111;
+}
+
+.form-note {
+  margin-top: 1rem;
+  color: #333;
+}
+
+/* =========================
+   ASIDE CARDS
+   ========================= */
+
+.contact-aside {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.card {
+  border: 1px solid #111;
+  padding: 1.25rem;
+}
+
+.card-title {
+  margin: 0 0 0.75rem;
+  font-size: 1rem;
+  letter-spacing: 0.14em;
+}
+
+.card-text {
+  margin: 0.4rem 0;
+}
+
+.card a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.card-list {
+  margin: 0.5rem 0 0;
+  padding-left: 1.25rem;
+}
+
+/* =========================
+   ACCESSIBLE FOCUS
+   ========================= */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 3px;
+}
+
+/* =========================
+   SCROLL FADE REVEALS
+   ========================= */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 700ms ease, transform 700ms ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
